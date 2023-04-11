@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+    <!-- SECCION PRINCIPAL -->
+    <%- include('./partials/header') %>
+
+        <body>
+            <section class="register-section">
+                <div>
+                    <h3>¿Que fué lo que sucedió?</h3>
+                </div>
+                <form action="/sinister/urgent" method="POST">
+                    <div class="register-form">
+                        <input type="text" name="nombre" placeholder="Nombre">                        
+                        <input type="text" name="apellido" placeholder="Apellido">
+                        <input type="email" name="email"placeholder="Correo electrónico">
+                        <input type="number" name="telefono" placeholder="Telefono de contacto">
+                        <input type="text" name="detalle" placeholder="Detalle de lo ocurrido">
+                        <input type="text" name="lugar" placeholder="Lugar del siniestro">
+                        <input type="text" name="monto" placeholder="Monto estimado del daño en pesos argentinos"> 
+                    </div>
+                    <div>
+                        <input type="checkbox" name="term&conditions" value="Acepta términos y condiciones">
+                        <p class="font-white"> Declaro que los datos consignados precedentemente son veraces</p>
+                    </div>
+                    <div>
+                        <button id="button" type="submit" class="register-button">Enviar</button>
+                    </div>
+                </form>
+            </section>
+            
+        </body>
+
+</html>

@@ -1,0 +1,40 @@
+<header class="header">
+        <div class="logo">
+            <a href="/"><img src="/images/Logo2.png" class="logo"></a>
+        </div>
+       <nav>
+        <ul class="nav-links">
+            <li><a class="font-white" href="/products">Seguros </a></li>
+            <% if (locals.isLogged && locals.userLogged.rol.id == 1) { %>
+                <li id = 'crear-seguro'><a href="/products/create">Crear un Seguro</a></li>
+                <li><a href="http://localhost:3000">Dashboard</a></li>
+            <% } %>
+            <li><a class="font-white" href="/#grupo-2">Contacto</a></li>
+        </ul>
+        </nav>
+        <div class="btn-links">
+                <ul>
+                    <% if (!locals.isLogged) { %>
+                  <a href="/user/login" class="btn"><button>Ingresar</button></a>
+                  <a href="/user/register" class="btn"><button>Registrarse</button></a>
+                  <% }else { %>
+                        <a href="/user/userProfile" class="btn"><button>Ver Perfil</button></a>
+                        <a href="/user/logout" class="btn"><button>Cerrar sesion</button></a>
+                     
+                  <% } %> 
+                </ul>
+        </div>
+
+
+        
+
+
+        <!-- <div class="btn-links ">
+            <a href="/user/register" class="btn"><button>Registrarse</button></a>
+            <a href="/user/login" class="btn"><button>Ingresar</button></a>
+            <ul><a href="/user/userProfile">Mi perfil</a>
+                <li><a href="/user/logout">Logout</a></li>
+            </ul>
+        </div> -->
+        
+</header>

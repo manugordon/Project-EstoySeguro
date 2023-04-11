@@ -1,0 +1,46 @@
+
+const conditions = {
+    email: {
+        regex:  /^\S+@\S+\.\S+$/, 
+        msg: "El email debe tener un formato valido y no puede ser vacio"
+    },
+    // esto indica que al menos debe tener un @ y un .
+    password: {
+        regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&*.-_/\\"':;{}[<>|])[a-zA-Z\d!@#$%&*.-_/\\"':;{}[<>|]{8,}$/,
+        msg: "La contraseña debe contener al menos 8 caracteres, minusculas, mayusculas, un numero y un caracter especial"
+    }
+}
+
+let validator = (e) => {
+    switch (e.target.id) {
+        case 'email':
+            validarInput(e, 'email', conditions.email)
+                break;
+        case 'password':
+            validarInput(e, 'password', conditions.password)
+            break;
+    }
+
+}
+let validarInput = (e, id, validator) => {
+    let val = e.target.value;
+    let regex = validator.regex;
+
+    if(!regex.test(val)){
+        e.target.classList.add('front-end-validations')
+        document.getElementById('validation-error-' + id).innerHTML = validator.msg;
+    }else{
+        e.target.classList.remove('front-end-validations')
+        document.getElementById('validation-error-' + id).innerHTML = "";
+    }
+}
+
+window.addEventListener('load', () =>{
+
+    let inputs = document.querySelectorAll('input');
+    
+    inputs.forEach(element => {
+        element.addEventListener('keyup', validator);
+    });
+
+})

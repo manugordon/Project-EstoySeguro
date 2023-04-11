@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+    <!-- SECCION PRINCIPAL -->
+    <%- include('./partials/header') %>
+
+        <body>
+            <section class="register-section">
+                <div>
+                    <h3>Editar Perfil</h3>
+                </div>
+                <form action="/user/edit/<%= Usuario.id %>/?_method=put" method="POST">
+                    <div class="register-form">
+                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="<%= Usuario.nombre %>" <% if(locals.oldData) { %> value="<%= oldData.nombre %>" <% } %>>
+
+                        <div class="validation-error" id="validation-error-nombre">
+                            <% if (locals.errors && errors.nombre) { %>
+                                <span  >  <%= errors.nombre.msg %> </span>
+                            <% } %>
+                        </div>
+                        
+                        <input id="apellido" type="text" name="apellido" placeholder="Apellido" value="<%= Usuario.apellido %>"<% if(locals.oldData) { %> value="<%= oldData.apellido %>" <% } %>>
+                                <div class="validation-error" id="validation-error-apellido">
+                                    <% if (locals.errors && errors.apellido) { %>
+                                        <span  >  <%= errors.apellido.msg %> </span>
+                                    <% } %>
+                                </div>
+                        <input id="email" type="email" name="email"placeholder="Correo electrónico" value="<%= Usuario.email %>"<% if (locals.oldData) { %>value="<%= oldData.email %>" <%} %>>
+                            <div class="validation-error" id="validation-error-email">
+                                <% if (locals.errors && errors.email) { %>
+                                    <span  >  <%= errors.email.msg %> </span>
+                                <% } %>
+                            </div>
+                        <input type="number" name="documento" placeholder="CUIT o DNI" value="<%= Usuario.documento %>"<% if (locals.oldData){ %> value="<%= oldData.documento %>" <% } %>>
+                           
+                                <div class="validation-error validation-error-documento">
+                                    <% if (locals.errors && errors.documento) { %>
+                                        <span>  <%= errors.documento.msg %> </span>
+                                    <% } %>
+                                </div>
+                            
+                        <input type="text" name="ciudad" placeholder="Ciudad" value="<%= Usuario.ciudad %>"<% if(locals.oldData) { %> value="<%= oldData.ciudad %>" <% } %>>
+                        <div class="validation-error" id="validation-error-ciudad">
+                            <% if (locals.errors && errors.ciudad) { %>
+                                <span  >  <%= errors.ciudad.msg %> </span>
+                            <% } %>
+                        </div>
+                        <div>
+                            <label for="avatar" class="font-white"> Imagen de Perfil </label>
+                                <input type="file" name="avatar" id="avatar" accept=".png,.jpeg,.jpg,.gif">
+                                    <% if (locals.errors && errors.avatar) { %>
+                                        <div class="validation-error">
+                                            <%= errors.avatar.msg %>
+                                        </div>
+                                    <% } %>
+                        </div>
+
+                    </div>
+                    <div>
+                        <button id="button" type="submit" class="register-button">Guardar</button>
+                    </div>
+                </form>
+            </section>
+            <script src="/js/validatorRegister.js"></script>
+        </body>
+
+</html>

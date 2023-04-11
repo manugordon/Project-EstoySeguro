@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "axios": "^1.3.4",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.0.1",
+    "node-fetch": "^3.3.0",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0",
+    "sequelize-cli": "^6.5.2"
+  },
+  "name": "grupo_6_estoyseguro",
+  "description": "Nuestro sitio se llamara \"estoy seguro\". Este mismo consiste en una pagina donde el cliente encontrara distintas ofertas de seguros de todo tipo, automovilísticos, de viviendas, comerciales, de vida y accidentes personales.\r Al público al cual apuntamos es toda persona mayor de edad que requiera un seguro de forma  inmediata, nos enfocamos en solucionar un problema urgente, por ejemplo: Tener que contratar seguro para un trabajador en relación de dependencia por si le llegara a ocurrir un siniestro en horario laboral.\r Al tener una variedad de productos no nos limitamos un grupo etario limitado, apuntamos a personas entre  18-60 años. De clase media-alta, teniendo en cuenta que el seguro lo contrataran para su, auto/casa/persona en relación de dependencia.\r Lista de páginas de referencia:\r Me cubro:\r https://mecubro.com/ap/\r Rio Uruguay Seguros:\r https://rus.com.ar/cotizar-accidentes-personales\r Seguro por días:\r https://seguropordias.com/\r Behance:\r https://www.behance.net/gallery/154553391/Projeto-Site-Inovar-Seguros?tracking_source=search_projects%7Cseguros\r Click seguros:\r https://www.clickseguros.com.ar/?utm_source=google&utm_medium=cpc&utm_campaign=seguros_online&utm_id=seguros&kwd=seguros%20online&gclid=EAIaIQobChMIypSczOzq-gIVWEFIAB2W8As3EAAYAiAAEgKkh_D_BwE",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgnacioBarlettaTripodi/grupo_6_estoyseguro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgnacioBarlettaTripodi/grupo_6_estoyseguro/issues"
+  },
+  "homepage": "https://github.com/IgnacioBarlettaTripodi/grupo_6_estoyseguro#readme"
+}

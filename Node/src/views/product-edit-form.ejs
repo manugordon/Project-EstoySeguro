@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head', {title: 'Formulario de creación'}) %>
+
+<body class="product-edit">
+	<%- include('./partials/header') %>
+	<section class="edit-section" >
+		<div>				
+			<h2>Estas editando el producto <i><%= seguro.nombre %> </i> </h2>
+		</div>
+		<div class="edit-form">
+			<form action="/products/edit/<%= seguro.id %>/?_method=put" method="POST">
+				<div>
+					<div>
+						<label for="name">Nombre del producto:</label>
+						<input type="text" id="nombre" name="nombre" placeholder="Ej: Seguro para automoviles General" value="<%= seguro.nombre%> ">
+					</div>
+					<div>
+						<label for="price">Precio del producto:</label>
+						<input type="text" id="precio" name="precio" placeholder="Ej: 5678" value="<%= seguro.precio%> ">
+					</div>
+					<div>
+						<label for="icono">Icono del producto:</label>
+						<input type="text" id="icono" name="icono" placeholder="Ej: fa-fas-XX" value="<%= seguro.icono%> ">
+					</div>					
+					<div>
+						<label for="description">Descipción:</label>
+						<textarea name="descrpcion" id="descripcion"><%= seguro.descripcion %> </textarea>
+					</div>
+					<div>
+						<label for="category">Categoría:</label>
+						<select name="category" id="category" class="select-css">
+							<option value="">Elegí</option>
+							<option value="gold">Oro</option>
+							<option value="platinum">Platino </option>
+							<option value="zafiro">Zafiro </option>
+						</select>
+					</div>
+					<div class="edit-button-container">
+						<button type="submit" class="edit-button">GUARDAR</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+</body>	
+</html>

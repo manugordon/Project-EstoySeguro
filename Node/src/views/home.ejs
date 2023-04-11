@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+    <body class="home">
+        <!-- SECCION PRINCIPAL -->
+        <%- include('./partials/header') %>
+
+            <main class="main-home">
+                <!--STEPPER-->
+                <section>
+                    <article>
+                        <!-- <div class="stepper-wrapper">
+                            <div class="stepper-item completed">
+                                <div class="step-counter">1</div>
+                                <div class="step-name">Buscá</div>
+                            </div>
+                            <div class="stepper-item active">
+                                <div class="step-counter">2</div>
+                                <div class="step-name">Elegí</div>
+                            </div>
+                            <div class="stepper-item active">
+                                <div class="step-counter">3</div>
+                                <div class="step-name">Solicitá</div>
+                            </div>
+                            <div class="stepper-item active">
+                                <div class="step-counter">4</div>
+                                <div class="step-name">Pagá</div>
+                            </div>
+                        </div> -->
+                    </article>
+                </section>
+
+                <section>
+ 
+                    <!-- SEPARADOR -->
+                    <div>
+                        <i class="fa-light fa-horizontal-rule"></i>
+                    </div>
+           
+                    <!-- SLIDER -->
+                    <div class="slider-container">
+                        <!-- Slider main container -->
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide"><img src="images/sliderphoto3.jpg"></div>
+                                <div class="swiper-slide"><img src="images/sliderphoto6.jpg"></div>
+                                <div class="swiper-slide"><img src="images/sliderphoto4.jpg"></div>
+                                <div class="swiper-slide"><img src="images/sliderphoto5.jpg"></div>
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                             <!-- TARJETAS -->
+                             <div class="iconos-tarjetas">
+                                <i class="fa-brands fa-cc-visa"></i>
+                                <i class="fa-brands fa-cc-mastercard"></i>
+                                <i class="fa-brands fa-cc-paypal"></i>
+                                <i class="fa-brands fa-cc-amex"></i>
+                                <i class="fa-brands fa-cc-amazon-pay"></i>
+                                <i class="fa-brands fa-cc-diners-club"></i>
+                            </div>
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+                    <script>
+                        const swiper = new Swiper('.swiper', {
+                            // Optional parameters
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false
+                            },
+                            loop: true,
+
+                            // If we need pagination
+                            pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                            },
+
+                            // Navigation arrows
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                        });
+                    </script>
+                    <!--TARJETAS DE PRODUCTOS-->
+                    <h5 id="titulo"> Encontrá tu Seguro</h5>
+                    <div>
+                        <form class="form" action="/products/buscar" method="GET">
+                            <input  type="text" name="query" class="inputcentrado">
+                            <button type="submit">Buscar</button>
+                        </form>
+                    </div>
+                    <article class=" card-seccion">
+                        <div class="container-card">
+                            <div class="card">
+                                <a href="/products/filter/1">
+                                    <figure>
+                                        <i class="fa-solid fa-car"></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Automoviles</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/products/filter/2">
+                                    <figure>
+                                        <i class="fa-solid fa-heart"></i></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Seguros de Vida</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/products/filter/3">
+                                    <figure>
+                                        <i class="fa-solid fa-scale-balanced"></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Riesgo Civil</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/products/filter/4">
+                                    <figure>
+                                        <i class="fa-solid fa-briefcase"></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Riesgo de Trabajo</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/products/filter/5">
+                                    <figure>
+                                        <i class="fa-solid fa-fire"></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Incendio</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/products/filter/6">
+                                    <figure>
+                                        <i class="fa-solid fa-mobile"></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Técnologia</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/products/filter/7">
+                                    <figure>
+                                        <i class="fa-sharp fa-solid fa-route"></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Riesgo Cibernetico</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/products/filter/8">
+                                    <figure>
+                                        <i class="fa-solid fa-scroll"></i>
+                                    </figure>
+                                    <div class="contenido">
+                                        <h3>Cauciones</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- DESCRIPCIONES -->
+                    <article class="siniestro-seccion">
+                        <div class="siniestros-container">
+                            <h2>Siniestros 24hs</h2>
+                            <h3>Nos permite brindarle un mejor asesoramiento en el momento que más nos necesita, lo que
+                                es vital para tomar y brindar los datos correctos y asesorarse.</h3>
+                            <h4>La Nota de denuncia: debe incluir como mínimo los siguientes datos</h4>
+                            <div class="siniestros-descripcion">
+                                <div><i class="fa-solid fa-check"></i>Fecha de ocurrencia / circunstancia del hecho
+                                </div>
+                                <div><i class="fa-solid fa-check"></i>Detalles precisando tipo de siniestro.</div>
+                                <div><i class="fa-solid fa-check"></i>Monto Estimado del daño.</div>
+                                <div><i class="fa-solid fa-check"></i>Denuncia policial o de las autoridades competentes
+                                    que intervinieron en el caso.</div>
+                                <div><i class="fa-solid fa-check"></i>Tomar todas las medidas de primera urgencia
+                                    destinadas a disminuir las pérdidas y/o daños . En caso de necesitar por motivos
+                                    valederos modificar, reparar o reemplazar el bien dañado para evitar pérdidas
+                                    mayores, Antes de la inspección de la aseguradora, deberán tomarse fotografías del
+                                    bien conservando evidencia del/los daños.</div>
+                            </div>
+                            <div class="siniestros-button">
+                                <a href="/sinister/urgent" class="btn"><button>Formulario</button></a>
+                            </div>
+                        </div>
+                    </article>
+            </main>
+            <%- include('./partials/footer') %>
+            
+    </body>
+
+</html>

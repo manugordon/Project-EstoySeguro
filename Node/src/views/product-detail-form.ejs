@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head', {title: 'Formulario de creación'}) %>
+
+<body class="product-edit">
+	<%- include('./partials/header') %>
+	<section class="product-detail-section" >
+		<div>				
+		</div>
+		<div class="product-detail-form">
+            <div>
+                <h3><%= seguro.nombre %> </h3>
+            </div>
+            <div class="card">
+                <figure>
+                    <i class="<%= seguro.icono %>"></i>
+                </figure>
+            </div>
+            <div class="product-detail-inline">
+            <h4>Categoria:</h4><h5> <%= seguro.nombre %> </h5>
+            <h4>Precio:</h4><h5> $<%= seguro.precio %></h5>
+            </div>
+            <div class="product-detail-description">
+                <p><%= seguro.descripcion %> </p>
+            </div>
+            <div class="product-detail-buttons">
+                <% if (locals.isLogged && locals.userLogged.rol.id == 1) { %>
+                    <a href="/products/edit/<%= seguro.id %>" class="btn"><button>Editar</button></a>
+                    <form action="/products/<%= seguro.id %>/?_method=delete" method="POST" class="btn">
+                        <button type="submit" class="btn">Eliminar</button>
+                    </form>
+                <% } %>
+            </div>
+		</div>
+	</section>
+    <%- include('./partials/footer') %>
+</body>	
+</html>

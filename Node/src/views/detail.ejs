@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+    <!-- SECCION PRINCIPAL -->
+<%- include('./partials/header') %>
+<main>
+<div class="container-products-wrapper">
+    <div class="image-row">
+            <img src="/images/producto.png" alt="#">
+    </div>
+    <div class="product-description">
+    <div class="product-row1">
+        <div class="detail">
+            <h2><%= product.pregunta1 %> </h2>
+            <h4><%= product.respuesta1 %> </h4>
+        </div>
+        <div class="detail">
+            <h2>¿Quién puede contratar el seguro incendio para una propiedad a alquilar?</h2>
+            <h4>Esta cobertura la puede contratar tanto el inquilino, el propietario o la inmobiliaria.</h4>
+        </div>
+        <div class="detail">
+            <h2>¿Contempla daños a mis vecinos?</h2>
+            <h4>
+                La cobertura de Incendio, por sí misma, no cubre los daños a vecinos; pero contratando la cobertura de Responsabilidad Civil hacia linderos, estás protegido ante los daños que un incendio pueda provocar a tus vecinos.</h4>
+        </div>
+    </div>  
+    <div class="product-row2">
+        <div class="detail">
+            <h3>Cobertura básica</h3>
+            <h4>Daños directos acción del fuego, rayo o explosión
+                Impacto de aeronaves, vehículos terrestres, sus partes componentes y/o carga transportada
+                Daños directos por Humo proveniente de un incendio/explosión
+                Vandalismo, malevolencia, tumulto popular y otros hechos como huelga o lock-out</h4>
+        </div>
+        <div class="detail">
+            <h3>Coberturas adicionales</h3>
+            <h4>Cobertura de huracán, vendaval, ciclón o tornado
+                Cobertura de terremoto
+                Cobertura de granizo
+                Pérdida o daños por falta de frio
+                Contenido general
+                Cobertura responsabilidad civil linderos
+                Remoción de escombros</h4>
+        </div>
+    </div>
+    <div class="product-row3">
+       <h3>¿Querés más detalles sobre esta cobertura?</h3> 
+       <h4>Un productor asesor puede brindarte toda la información necesaria para que puedas contratar con seguridad este producto o el que mejor se adapte a tus necesidades.</h4>
+       <button>BOTON</button>
+    </div>
+</div>
+</div>
+<div class="FAQ">
+    <h2>FAQ</h2>
+    <h4>FAQ</h4>
+    <button>CONSULTA</button>
+</main>
+<%- include('./partials/footer') %>
+</div>
+</body>
+</html>

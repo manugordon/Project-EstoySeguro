@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head', {title: 'Compra'}) %>
+
+<body class="product-edit">
+	<%- include('./partials/header') %>
+    <div class="containerx">
+    <h2>Acabas de comprar el seguro: </h2> <h3><%= seguro.nombre%></h3>
+	</div>
+        <section class="product-detail-section" >
+		<div>				
+		</div>
+		<div class="product-detail-form">
+            <div>
+                <h3><%= seguro.nombre %> </h3>
+            </div>
+            <div class="card">
+                <figure>
+                    <i class="<%= seguro.icono %>"></i>
+                </figure>
+                <div class= "card-info">
+                    <h3><%= seguro.nombre %> </h3>
+                </div>
+            </div>
+            <div class="product-detail-inline">
+            <h4>Categoria:</h4><h5> <%= seguro.categoria.nombre %> </h5>
+            <h4>Precio:</h4><h5> $<%= seguro.precio %> / MES </h5>
+            </div>
+            <div class="product-detail-description">
+                <p><%= seguro.descripcion %> </p>
+            </div>
+		</div>
+	</section>
+    <%- include('./partials/footer') %>
+</body>	
+</html>

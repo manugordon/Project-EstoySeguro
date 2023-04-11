@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+    <!-- SECCION PRINCIPAL -->
+    <%- include('./partials/header') %>
+
+        <body>
+            <section class="register-section">
+                <div>
+                    <h3>Ingresa tus datos</h3>
+                </div>
+                <form action="/user/register" method="POST" enctype="multipart/form-data">
+                    <div class="register-form">
+                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" <% if(locals.oldData) { %> value="<%= oldData.nombre %>" <% } %>>
+
+                        <div class="validation-error" id="validation-error-nombre">
+                            <% if (locals.errors && errors.nombre) { %>
+                                <span  >  <%= errors.nombre.msg %> </span>
+                            <% } %>
+                        </div>
+                        
+                        <input id="apellido" type="text" name="apellido" placeholder="Apellido" <% if(locals.oldData) { %> value="<%= oldData.apellido %>" <% } %>>
+                                <div class="validation-error" id="validation-error-apellido">
+                                    <% if (locals.errors && errors.apellido) { %>
+                                        <span  >  <%= errors.apellido.msg %> </span>
+                                    <% } %>
+                                </div>
+                        <input id="email" type="email" name="email"placeholder="Correo electrónico"<% if (locals.oldData) { %>value="<%= oldData.email %>" <%} %>>
+                            <div class="validation-error" id="validation-error-email">
+                                <% if (locals.errors && errors.email) { %>
+                                    <span  >  <%= errors.email.msg %> </span>
+                                <% } %>
+                            </div>
+                        <input type="number" name="documento" placeholder="CUIT o DNI" <% if (locals.oldData){ %> value="<%= oldData.documento %>" <% } %>>
+                           
+                                <div class="validation-error validation-error-documento">
+                                    <% if (locals.errors && errors.documento) { %>
+                                        <span>  <%= errors.documento.msg %> </span>
+                                    <% } %>
+                                </div>
+                            
+                        <input type="date" name="fecha_Nacimiento">
+                        <input type="text" name="ciudad" placeholder="Ciudad" <% if(locals.oldData) { %> value="<%= oldData.ciudad %>" <% } %>>
+                        <div class="validation-error" id="validation-error-ciudad">
+                            <% if (locals.errors && errors.ciudad) { %>
+                                <span  >  <%= errors.ciudad.msg %> </span>
+                            <% } %>
+                        </div>
+                        <input id="password" type="password" name="password" placeholder="Clave de usuario" <% if (locals.oldData){ %> value="<%= oldData.password%>" <% } %>>
+                            <div class="validation-error" id="validation-error-password">
+                                <% if (locals.errors && errors.password) { %>
+                                    <span  >  <%= errors.password.msg %> </span>
+                                <% } %>
+                            </div>
+                    </div>
+                    <div>
+                        <label for="avatar" class="font-white"> Imagen de Perfil </label>
+                            <input type="file" name="avatar" id="avatar" accept=".png,.jpeg,.jpg,.gif">
+                                <% if (locals.errors && errors.avatar) { %>
+                                    <div class="validation-error">
+                                        <%= errors.avatar.msg %>
+                                    </div>
+                                <% } %>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="term&conditions" value="Acepta términos y condiciones">
+                        <p class="font-white"> Acepta términos y condiciones</p>
+                    </div>
+                    <div>
+                        <button id="button" type="submit" class="register-button">Registrarme</button>
+                    </div>
+                </form>
+            </section>
+            <script src="/js/validatorRegister.js"></script>
+        </body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head', {title: 'Formulario de creación' }) %>
+
+    <body class="product-edit">
+        <%- include('./partials/header') %>
+
+        <div class="containerx"> <h2>Resultados de la Búsqueda</h2></div>
+          
+            <section class="product-detail-section">
+                <div class="section-title">
+                </div>
+                <div class="product-detail-wrapper">
+                    <% if (seguros.length > 0) { %>
+                    <% seguros.forEach(seguro=> { %>
+                        <div class="product-col">
+                            <div class="product-detail-form">
+                                <div class="product-detail-title">
+                                    <h3 class="card-title">
+                                        <%= seguro.nombre %>
+                                    </h3>
+                                    <i class="<%= seguro.icono %> "></i>
+                                </div>
+                                <div class="product-detail-inline">
+                                    <h4>Categoria:</h4>
+                                    <h5 class="product-detail-category">
+                                        <%= seguro.categoria.nombre %> 
+                                    </h5>
+                                    <h4>Precio:</h4>
+                                    <h5 class="product-detail-price"> $<%= seguro.precio %> </h5>
+                                </div>
+                                <div class="product-detail-description">
+                                    <p>
+                                        <%= seguro.descripcion %>
+                                    </p>
+                                </div>
+                                <div class="product-detail-buttons">
+                                    
+                                    <form action="/products/buy/<%= seguro.id %>" method="POST" class="btn">
+                                        <button type="submit">Comprar</button>
+                                    </form>
+                                            <% if (locals.isLogged && locals.userLogged.rol.id == 1) { %>
+                                                <a href="/products/edit/<%= seguro.id %>" class="btn"><button>Editar</button></a>
+                                    <!-- <a href="/products/<%= seguro.id %>/?_method=delete" class="btn"><button>Eliminar</button></a> -->
+                                                <form action="/products/<%= seguro.id %>/?_method=delete" method="POST" class="btn">
+                                                    <button type="submit">Eliminar</button>
+                                                </form>
+                                            <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+
+                </div>
+            </section>
+ <% } else { %>
+    <div class="containerx"> <h2>Lamentablemente no tenemos lo que buscas</h2></div>
+     
+    <% } %>
+    </body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+<body class="body-login">
+    <%- include('./partials/header') %>
+    <section class="login-section" >
+        <div>
+            <h3 class="font-white">Ingresa tus datos</h3>
+        </div>
+        <div>
+            <form action="/user/login" method="post" class="login-form">
+                
+                <input id= "email" type="email" name="email" placeholder="Correo electrónico">
+                <div class="validation-error" id="validation-error-email">
+                    <% if (locals.errors && errors.email) { %>
+                        <span  >  <%= errors.email.msg %> </span>
+                    <% } %>
+                </div>
+                <input id="password" type="password" name="password" placeholder="Clave de usuario">
+                <div class="validation-error" id="validation-error-password">
+                    <% if (locals.errors && errors.password) { %>
+                        <span  >  <%= errors.password.msg %> </span>
+                    <% } %>
+                </div>
+                <div>
+                    <input type="checkbox" name="recordar_usuario" value="recordar_usuario">
+                    <p class="font-white"> Recordar mi usuario</p>
+                </div>
+                <button id="button" type="submit" class="login-button">INGRESAR</button>
+            </form>        
+        </div>
+       
+        <div >
+            <h4><a  href="">Olvidaste tu contraseña?</a></h4>
+        </div>
+        <div>
+            <h5>¿No tienes cuenta? <a class="font-white"href="/user/register">CLICK AQUI</a></h5>
+        </div>
+        <div>
+            <!-- ACA VA EL CAPTCHA  -->
+        </div>
+        
+</section>
+<script src="/js/validatorLogin.js"></script>
+</body>
+</html>

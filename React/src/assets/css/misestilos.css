@@ -1,0 +1,7 @@
+.container-fluid {
+    background-color: #000e29;
+}
+
+#content > div.container-fluid > div.d-sm-flex.aligns-items-center.justify-content-between.mb-4 > h1 {
+    color: white
+}
